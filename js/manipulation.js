@@ -1,33 +1,12 @@
-// attr()
-// ------
-/*
-
-$("li").each(function() {
-
-  $(this).attr("title", $(this).find("span").text());
-
-});
-*/
-
-//prop()
-// -----
-/*
-
-$("li span").each(function() {
-
-  console.log($(this).prop("tagName"));
-
-});
-
-*/
-
 // append()
 // --------
 /*
 
 $("li").each(function() {
 
-  $(this).append($(this).clone());
+  var newElem = $(this).clone();
+
+  $(this).append(newElem);
 
 });
 
@@ -39,7 +18,9 @@ $("li").each(function() {
 
 $("li").each(function() {
 
-  $(this).clone().appendTo($(this));
+  var newElem = $(this).clone();
+
+  newElem.appendTo($(this));
 
 });
 
@@ -51,8 +32,7 @@ $("li").each(function() {
 
 $("li").each(function() {
 
-  var currentElem = $(this),
-  newElem = currentElem.clone();
+  var newElem = $(this).clone();
 
   // insertAfter
   $(this).after(newElem);
@@ -67,8 +47,7 @@ $("li").each(function() {
 
 $("li").each(function() {
 
-  var currentElem = $(this),
-  newElem = currentElem.clone();
+  var newElem = $(this).clone();
 
   // insertAfter
   newElem.insertAfter($(this));
@@ -76,6 +55,7 @@ $("li").each(function() {
 });
 
 */
+
 
 // html()
 // ------
@@ -99,6 +79,7 @@ $("article ul").html(ul);
 /*
 
 var arr = ["Lara Croft", "Master Chief", "Doc McStuffins", "Snooki", "Altaire", "Cartman", "Scooby-Doo", "Donald Trump", "Donald Duck", "Jack Bauer (CTU agent)", "George RR Martin", "Rick Grimes", "Joan"];
+
 $("ul li span").each(function(index) {
 
   $(this).text(arr[index]);
